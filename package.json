@@ -28,7 +28,7 @@
 			"email": "slavomir.sidor@elrest.cz"
 		}
 	],
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"scripts": {
 		"publish:patch": "npm version patch && npm publish --patch --registry $NPM_REGISTRY_PUBLISH",
 		"publish:minor": "npm version minor && npm publish --minor --registry $NPM_REGISTRY_PUBLISH",
