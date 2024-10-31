@@ -1,12 +1,13 @@
 {
-	"name": "@wago/node-red-wdx-trend",
-	"description": "WAGO - Node RED - WDX Trend",
+	"name": "@wago/node-red-wdx-ws",
+	"description": "WAGO - Node RED - WDX - Web Socket",
 	"keywords": [
 		"node-red",
 		"wago",
 		"wdx",
-		"trend",
-		"IoT",
+		"ws",
+		"web-socket",
+		"iot",
 		"palette",
 		"plc",
 		"codesys",
