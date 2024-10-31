@@ -1,12 +1,13 @@
 {
-	"name": "@wago/node-red-wdx-trend",
-	"description": "WAGO - Node RED - WDX Trend",
+	"name": "@wago/node-red-wdx-ws",
+	"description": "WAGO - Node RED - WDX - Web Socket",
 	"keywords": [
 		"node-red",
 		"wago",
 		"wdx",
-		"trend",
-		"IoT",
+		"ws",
+		"web-socket",
+		"iot",
 		"palette",
 		"plc",
 		"codesys",
@@ -28,7 +29,7 @@
 			"email": "slavomir.sidor@elrest.cz"
 		}
 	],
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"scripts": {
 		"publish:patch": "npm version patch && npm publish --patch --registry $NPM_REGISTRY_PUBLISH",
 		"publish:minor": "npm version minor && npm publish --minor --registry $NPM_REGISTRY_PUBLISH",
