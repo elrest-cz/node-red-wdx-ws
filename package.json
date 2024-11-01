@@ -17,7 +17,7 @@
 	"author": "Slavomir Sidor <slavomir.sidor@elrest.cz>",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com:elrest-cz/node-red-wdx-trend.git"
+		"url": "git+https://github.com:elrest-cz/node-red-wdx-ws.git"
 	},
 	"contributors": [
 		{
@@ -29,7 +29,7 @@
 			"email": "slavomir.sidor@elrest.cz"
 		}
 	],
-	"version": "2.1.0",
+	"version": "2.1.1",
 	"scripts": {
 		"publish:patch": "npm version patch && npm publish --patch --registry $NPM_REGISTRY_PUBLISH",
 		"publish:minor": "npm version minor && npm publish --minor --registry $NPM_REGISTRY_PUBLISH",

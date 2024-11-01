@@ -56,8 +56,7 @@ module.exports = function (RED) {
 
 	const WS_RECONNECT_TIMEOUT = 1000;
 
-	function EDesignRuntimeWebSocketClient(config) {
-		console.log("EDesignRuntimeWebSocketClient");
+	function WDXWebSocketClient(config) {
 		RED.nodes.createNode(this, config);
 
 		this.__ws = undefined;
@@ -72,7 +71,7 @@ module.exports = function (RED) {
 			this.__ws.uuid = uuid.v4();
 
 			this.__ws.on('open', () => {
-				//console.log("EDesignRuntimeWebSocketClient.opened");
+				//console.log("WDXWebSocketClient.opened");
 
 				this.__wsStatus.next(WS_STATUS_CODES.OPEN);
 				this.emit(
@@ -86,7 +85,7 @@ module.exports = function (RED) {
 
 			this.__ws.on('close', () => {
 
-				//console.log("EDesignRuntimeWebSocketClient.ws.closed", this.__closing);
+				//console.log("WDXWebSocketClient.ws.closed", this.__closing);
 				this.__wsStatus.next(WS_STATUS_CODES.CLOSED);
 
 				this.emit('closed', { count: '', id: this.__ws.uuid });
@@ -94,7 +93,7 @@ module.exports = function (RED) {
 				if (!this.__closing) {
 					// Node is closing - do not reconnect ws after its disconnection when node shutdown
 					clearTimeout(this.tout);
-					//console.log("EDesignRuntimeWebSocketClient.ws.reconnect");
+					//console.log("WDXWebSocketClient.ws.reconnect");
 					this.tout = setTimeout(
 						() => {
 							__connect();
@@ -105,7 +104,7 @@ module.exports = function (RED) {
 
 			this.__ws.on('error', (err) => {
 
-				console.error("EDesignRuntimeWebSocketClient.error", err);
+				console.error("WDXWebSocketClient.error", err);
 
 				this.emit(
 					'erro',
@@ -129,14 +128,14 @@ module.exports = function (RED) {
 			this.__ws.on(
 				'message',
 				(data, flags) => {
-					//console.debug("EDesignRuntimeWebSocketClient.ws.message", data.toString(), flags);
+					//console.debug("WDXWebSocketClient.ws.message", data.toString(), flags);
 					this.__wsIncomingMessages.next(JSON.parse(data));
 				}
 			);
 		}
 
 		this.on("close", (done) => {
-			//console.log("EDesignRuntimeWebSocketClient.close");
+			//console.log("WDXWebSocketClient.close");
 
 			this.__closing = true;
 			this.__wsStatus.next(WS_STATUS_CODES.CLOSING);
@@ -147,19 +146,18 @@ module.exports = function (RED) {
 		__connect();
 	}
 
-	EDesignRuntimeWebSocketClient.prototype.wsStatus = function () {
+	WDXWebSocketClient.prototype.wsStatus = function () {
 		return this.__wsStatus;
 	}
 
-	EDesignRuntimeWebSocketClient.prototype.wsMessages = function () {
+	WDXWebSocketClient.prototype.wsMessages = function () {
 		return this.__wsIncomingMessages;
 	}
 
-	EDesignRuntimeWebSocketClient.prototype.wsSend = function (data) {
-		//console.log("EDesignRuntimeWebSocketClient.send", data);
+	WDXWebSocketClient.prototype.wsSend = function (data) {
 		this.__ws.send(JSON.stringify(data));
 	}
 
-	RED.nodes.registerType("edesign.runtime.web-socket", EDesignRuntimeWebSocketClient);
+	RED.nodes.registerType("wago.wdx.web-socket", WDXWebSocketClient);
 
 }
