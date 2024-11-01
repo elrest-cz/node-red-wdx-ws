@@ -17,7 +17,7 @@
 	"author": "Slavomir Sidor <slavomir.sidor@elrest.cz>",
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com:elrest-cz/node-red-wdx-trend.git"
+		"url": "git+https://github.com:elrest-cz/node-red-wdx-ws.git"
 	},
 	"contributors": [
 		{
