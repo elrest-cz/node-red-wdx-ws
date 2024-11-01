@@ -1,4 +1,4 @@
-# WDX - Node Red - Web Socket
+# Wago - Node Red - WDX - Web Socket
 
 Node Red plugin WDX Web Socket Configuration implementing WDX WS Trend Interface communication within Node Red application.
 
@@ -53,7 +53,7 @@ yarn add @wago/node-red-wdx-ws
 
 To use WDX nodes in your Node-RED flow, follow these steps:
 
-1. Install the `@wago/node-red-wdx-trend` package in your Node-RED project.
+1. Install the `@wago/node-red-wdx-ws` package in your Node-RED project.
 2. Import the required nodes into your flow and configure the necessary WDX WS Client options.
 
 ![WDX Nodes - WS Client Configuration](./assets/images/ws-client-config.png)
