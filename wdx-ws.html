@@ -6,9 +6,14 @@
 			url: {
 				value: '',
 				required: true,
-				label: 'Server',
+				label: 'Web Socket URL',
 				validate: RED.validators.regex(/^((?!\/debug\/ws).)*$/)
-			}
+			},
+			reconnectTimeout:{
+				value: 1000,
+				required: true,
+				label: 'Web Socket Reconnect Timeout (ms)',
+			},
 		},
 		inputs: 0,
 		outputs: 0,
@@ -30,21 +35,73 @@
 	<div class="form-row">
 		<label for="node-config-input-url">
 			<i class="fa fa-bookmark"></i>
-			<span>WS Url</span>
+			<span>Web Socket Url</span>
 		</label>
 		
 		<input id="node-config-input-url" type="text" placeholder="ws://localhost:8081">
 	</div>
 
+	<div class="form-row">
+		<label for="node-config-input-reconnect-timeout">
+			<i class="fa fa-bookmark"></i>
+			<span>Web Socket Reconnect Timeout</span>
+		</label>
+		
+		<input id="node-config-reconnect-timeout" type="number" placeholder="1000">
+	</div>
+
 </script>
 
 <script type="text/html" data-help-name="wago.wdx.web-socket">
-	<h2>WDX Web Socket Client</h2>
 
-	<p>Configuration node providing Web Socket connection configuration for WDX Web Socket client.</p>
+	<img src="icons/@wago/node-red-wdx-data/WagoLogo.svg" />
+
+	<h2>WAGO - WDX - Web Socket Config</h2>
+
+	<h3>Overview</h3>
+
+	<p>
+		<b>Node Name:</b> WAGO - WDX - Web Socket<br />
+		<b>Description:</b> Node RED configuration node for WAGO - WDX - Web Socket Client.
+	</p>
+
+	<p>Configuration node providing Web Socket connection connection to <a href="">WAGO- WDX - Web Socket Server</a>.</p>
+
+	<h3>Installation</h3>
+
+	<p>
+	<pre>npm install @wago/node-red-wdx-ws</pre>
+	</p>
+
+	<h3>Configuration Options</h3>
+
+	<ul>
+		<li>
+			<b>Properties:</b>		
+			<dl class="message-properties">
+				<dt>Web Scoket Url<span class="property-type">string</span></dt>
+				<dd>WAGO - WDX - Web Socket Client - Url</dd>
+
+				<dt>Reconnect timeout<span class="property-type">number</span></dt>
+				<dd>WAGO - WDX - Web Socket Client - Reconnect timeout in miliseconds</dd>
+			</dl>
+		</li>
+	</ul>
+
+	<h3>Additional Resources</h3>
+
+	<ul>
+		<li><b>Github:</b> <a href="https://github.com/elrest-cz/node-red-wdx-ws">https://github.com/elrest-cz/node-red-wdx-ws</a></li>
+		<li><b>NPMJS:</b> <a href="https://www.npmjs.com/package/@wago/node-red-wdx-ws">https://www.npmjs.com/package/@wago/node-red-wdx-ws</a></li>
+		<li><b>Support:</b> info@elrest.cz</li>
+	</ul>
+
+	<h3>Licence</h3>
+
+	<ul>
+		<li><b>Licence:</b> MIT</li>
+		<li><b>Copyright</b> (c) 2024 Elrest Automations Systeme GMBH</li>
+	</ul>
 	
-	<h3>Parametres</h3>
 
-	<h4>WS Url</h4>
-	<p>Connection string in URL format for Web Socket Client.</p>
 </script>

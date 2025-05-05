@@ -29,7 +29,7 @@
 			"email": "slavomir.sidor@elrest.cz"
 		}
 	],
-	"version": "6.1.0",
+	"version": "6.1.2",
 	"scripts": {
 		"publish:patch": "npm version patch && npm publish --patch --registry $NPM_REGISTRY_PUBLISH",
 		"publish:minor": "npm version minor && npm publish --minor --registry $NPM_REGISTRY_PUBLISH",
@@ -54,7 +54,7 @@
 		"typedoc-plugin-markdown": "^3.17.1"
 	},
 	"dependencies": {
-		"@wago/wdx-schema": "~x.x.x",
+		"@wago/wdx-schema-base": "~x.x.x",
 		"@wago/wdx-ws-client-js": "~x.x.x",
 		"openapi-red": "^2.1.1",
 		"rxjs": "^7.8.1",
