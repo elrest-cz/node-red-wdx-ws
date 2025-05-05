@@ -11,8 +11,7 @@ module.exports = function (RED) {
 	const ws = require("ws");
 	const uuid = require("uuid");
 	const { Subject, BehaviorSubject } = require("rxjs");
-
-	const WDXSchema = require("@wago/wdx-schema");
+	const WDXSchema = require("@wago/wdx-schema-base");
 
 	const WS_STATUS_ONLINE_COLOR = 'green';
 	const WS_STATUS_OFFLINE_COLOR = 'red';
