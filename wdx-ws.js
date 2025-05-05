@@ -93,11 +93,13 @@ module.exports = function (RED) {
 				if (!this.__closing) {
 					// Node is closing - do not reconnect ws after its disconnection when node shutdown
 					clearTimeout(this.tout);
+					const reconnectTimeout=config.reconnectTimeout?? WS_RECONNECT_TIMEOUT;
+
 					//console.log("WDXWebSocketClient.ws.reconnect");
 					this.tout = setTimeout(
 						() => {
 							__connect();
-						}, WS_RECONNECT_TIMEOUT
+						}, reconnectTimeout
 					);
 				}
 			});
